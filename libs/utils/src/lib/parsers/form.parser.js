@@ -4,3 +4,8 @@ export function formParser(form) {
 
     return [inputValue1, inputValue2];
 }
+
+export function extractFormDataValues(form) {
+    const formData = new FormData(form);
+    return formParser(formData);
+}
