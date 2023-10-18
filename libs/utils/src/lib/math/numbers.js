@@ -14,3 +14,16 @@ export function cleanNumbers(numberInputs) {
     }
     return numbers;
 }
+
+/* Failed test from moving Integration Point 2 */
+/*
+export function cleanNumbers(numberInputs) {
+    const numbers = [];
+    for (const n of numberInputs) {
+        validateNonEmptyString(n); // Integration point 1
+        validateNumber(n); // Integration point 3
+        numbers.push(n);
+        transformStringToNumber(n); // Integration point 2
+    }
+    return numbers;
+} */
