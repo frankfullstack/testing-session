@@ -44,4 +44,12 @@ describe('cleanNumbers()', () => {
        * to the las part of the method and check again
        */
     })
+
+    it('should throw an error if an empty string value is provided in the input array', () => {
+        const inputNumbers = ['', 2];
+
+        const resultFn = () => cleanNumbers(inputNumbers);
+
+        expect(resultFn).toThrow(/Invalid input - must not be empty./)
+    })
 })
