@@ -1,3 +1,3 @@
-export function transformNumber(input) {
+export function transformStringToNumber(input) {
     return +input;
 }
