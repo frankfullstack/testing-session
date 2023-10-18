@@ -1,7 +1,7 @@
-export function add(numbers: number[]) {
+export function add(numbers) {
     let sum = 0;
     for (const n of numbers) {
-        sum+= n;
+        sum+= +n;
     }
     return sum;
 }
