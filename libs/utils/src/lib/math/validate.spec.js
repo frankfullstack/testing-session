@@ -1,4 +1,44 @@
-import {validateNumber} from "./validate";
+import { validateNumber, validateNonEmptyString } from './validate';
+
+describe('validateStringNotEmpty()', () => {
+    it('should throw an error, if an empty string is provided', () => {
+        const input = '';
+        const validationFn = () => validateNonEmptyString(input);
+        expect(validationFn).toThrow();
+    });
+
+    it('should throw an error with a message that contains a reason (must not be empty)', () => {
+        const input = '';
+        const validationFn = () => validateNonEmptyString(input);
+        expect(validationFn).toThrow(/must not be empty/);
+    });
+
+    it('should throw an error if a long string of blanks is provided', () => {
+        const input = '';
+        const validationFn = () => validateNonEmptyString(input);
+        expect(validationFn).toThrow();
+    });
+
+    it('should throw an error if any other value than a string is provided', () => {
+        const inputNum = 1;
+        const inputBool = true;
+        const inputObj = {};
+
+        const validationFnNum = () => validateNonEmptyString(inputNum);
+        const validationFnBool = () => validateNonEmptyString(inputBool);
+        const validationFnObj = () => validateNonEmptyString(inputObj);
+
+        expect(validationFnNum).toThrow();
+        expect(validationFnBool).toThrow();
+        expect(validationFnObj).toThrow();
+    });
+
+    it('should not throw an error, if a non-empty string is provided', () => {
+        const input = 'valid';
+        const validationFn = () => validateNonEmptyString(input);
+        expect(validationFn).not.toThrow();
+    });
+});
 
 describe('validateNumber()', () => {
     it('should throw an error if NaN is provided', () => {

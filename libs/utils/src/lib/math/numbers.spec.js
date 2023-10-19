@@ -1,29 +1,55 @@
-import { transformStringToNumber } from "./numbers";
+import {cleanNumbers, transformStringToNumber} from "./numbers";
 
-it('Should transform a string value to an equivalent type number', () => {
-    const input = '1';
+describe('transformStringToNumber()', () => {
+    it('Should transform a string value to an equivalent type number', () => {
+        const input = '1';
 
-    const result = transformStringToNumber(input);
+        const result = transformStringToNumber(input);
 
-    expect(result).toBe(1);
-    expect(result).toEqual(expect.any(Number))
-    // Or
-    expect(typeof result).toBe('number')
+        expect(result).toBe(1);
+        expect(result).toEqual(expect.any(Number))
+        // Or
+        expect(typeof result).toBe('number')
+    })
+
+    it('Should transform a string value to a number with the same number value', () => {
+        const input = '1';
+
+        const result = transformStringToNumber(input);
+
+        expect(result).toBe(1);
+
+    })
+
+    it('Should yield NaN for non-transformable values', () => {
+        const input = 'invalid';
+
+        const result = transformStringToNumber(input);
+
+        expect(result).toBeNaN();
+    })
 })
 
-it('Should transform a string value to a number with the same number value', () => {
-    const input = '1';
+describe('cleanNumbers()', () => {
+    it('Should return an array of number if an array of string is provided', () => {
+       const inputNumbers = ['1', '2'];
 
-    const result = transformStringToNumber(input);
+       const result = cleanNumbers(inputNumbers);
 
-    expect(result).toBe(1);
+       expect(typeof result[0]).toBe('number');
+       expect(typeof result[1]).toBe('number');
 
-})
+       /*
+       * Reorder the Integration point 2
+       * to the las part of the method and check again
+       */
+    })
 
-it('Should yield NaN for non-transformable values', () => {
-    const input = 'invalid';
+    it('should throw an error if an empty string value is provided in the input array', () => {
+        const inputNumbers = ['', 2];
 
-    const result = transformStringToNumber(input);
+        const resultFn = () => cleanNumbers(inputNumbers);
 
-    expect(result).toBeNaN();
+        expect(resultFn).toThrow(/Invalid input - must not be empty./)
+    })
 })
