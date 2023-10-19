@@ -97,3 +97,33 @@ git checkout asincrono_callbacks_promesas
 ```bash
 git checkout asincrono_callbacks_promesas_tests
 ```
+
+17. Mocking files
+
+```bash
+git checkout mocking_files
+```
+
+18. Mocking files tests (injected Logger function Spy with Jest)
+
+```bash
+git checkout mocking_files_tests
+```
+
+19. Mocking files tests 2 (fs automock and mockImplementation with Jest)
+
+```bash
+git checkout mocking_files_tests_2
+```
+
+20. Mocking files tests 3 (fs and path mock with Jest)
+
+```bash
+git checkout mocking_files_tests_3
+```
+
+21. Mocking files tests 4 (vitest example and fetch mock)
+    
+```bash
+git checkout mocking_files_tests_4
+```
