@@ -1,6 +1,7 @@
 import {validateNonEmptyString, validateNumber} from "./validate";
 
 export function transformStringToNumber(input) {
+    // return NaN;
     return +input;
 }
 

@@ -21,7 +21,7 @@ describe('add()', () => {
         expect(result).toBeNaN()
     })
 
-    it('Should sumarize string values if they can be converted to number', () => {
+    it('Should summarize string values if they can be converted to number', () => {
         const inputArray = ['2', '3'];
         const expectedResult = inputArray.reduce((prev, curr) => +prev + +curr, 0);
 
@@ -55,9 +55,10 @@ describe('add()', () => {
     })
 
     it('Should throw an error if several arguments are passed to the add function', () => {
-        // Here we want to avoid any unintended update of the add function adding more arguments, the the test should be failing
+        // Here we want to avoid any unintended update of the add function adding more arguments, the test should be failing
         const input1 = 5;
         const input2 = 1;
+    
 
         const resultFn = () => {
             add(input1, input2);
