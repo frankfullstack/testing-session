@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@testing-session/mocking": ["libs/nest-mocking/src/index.ts"],
       "@testing-session/utils": ["libs/utils/src/index.ts"]
     }
   },
