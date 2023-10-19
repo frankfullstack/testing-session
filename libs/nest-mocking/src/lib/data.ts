@@ -1,6 +1,7 @@
 import writeData from './util/io.js';
 
-export function generateReportData(logFn) {
+// Step 2: Recognize callback function to be spied
+export function generateReportData(logFn: (...args: string[]) => unknown) {
     const data = 'Some dummy data';
     if (logFn) {
         logFn(data);
@@ -9,7 +10,7 @@ export function generateReportData(logFn) {
     return data;
 }
 
-export async function storeData(data) {
+export async function storeData(data: string) {
     if (!data) {
         throw new Error('No data received');
     }
