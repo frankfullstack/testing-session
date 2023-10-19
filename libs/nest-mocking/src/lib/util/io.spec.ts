@@ -4,6 +4,17 @@ import { promises as fs } from 'fs';
 // Step 3: Mocking fs
 jest.doMock('fs') // with Vitest we could use vi.mock('fs')
 
+// Step 5: How to mock fs with Vitest
+
+// Vitest mocking __mocks__ fs.ts file
+// export const promises = {
+//     writeFile: vi.fn((path, data) => {
+//         return new Promise((resolve, reject) => {
+//             resolve();
+//         })
+//     })
+// }
+
 // Step 4: Mocking path
 jest.mock('path', () => {
     return {
